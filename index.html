@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Balımmm ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg1:#ff9a9e; --bg2:#fad0c4; --card:rgba(0,0,0,.28);
+}
+* { box-sizing: border-box; }
+body{
+  margin:0; padding:20px; color:#fff; font-family:Arial, sans-serif;
+  background: linear-gradient(120deg, var(--bg1), var(--bg2));
+  overflow-x:hidden;
+}
+.container{ max-width:760px; margin:auto; }
+.card{
+  background:var(--card);
+  padding:28px; border-radius:22px; margin:24px 0;
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  animation: fadeUp .9s ease both;
+}
+.card.delay{ animation-delay:.25s; }
+h1,h2{ text-align:center; margin:8px 0 14px; }
+.heart{ text-align:center; font-size:42px; margin:6px 0 10px; }
+p{ font-size:17px; line-height:1.6; text-align:center; }
+
+.photo{
+  width:100%; border-radius:18px; margin:16px 0;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.photo:hover{
+  transform: scale(1.04);
+  box-shadow:0 18px 38px rgba(0,0,0,.45);
+}
+
+/* Galeri grid */
+.grid{
+  display:grid; grid-template-columns:1fr; gap:16px;
+}
+@media(min-width:640px){
+  .grid{ grid-template-columns:1fr 1fr; }
+}
+
+/* Fade animasyonu */
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* Uçan kalpler */
+.heart-float{
+  position:fixed; bottom:-30px; font-size:18px; pointer-events:none;
+  animation: floatUp 6s linear infinite;
+  opacity:.9;
+}
+@keyframes floatUp{
+  from{ transform:translateY(0) translateX(0); opacity:.9;}
+  to{ transform:translateY(-110vh) translateX(40px); opacity:0;}
+}
+
+.footer{
+  text-align:center; opacity:.95; margin:40px 0 10px;
+  animation: fadeUp .9s ease both; animation-delay:.4s;
+}
+.badge{
+  display:inline-block; padding:8px 14px; border-radius:999px;
+  background:#ff5f7e; color:#fff; margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- GİRİŞ -->
+  <div class="card">
+    <h1>2. Ayımız Kutlu Olsun ❤️</h1>
+    <div class="heart">💖</div>
+    <p><strong>Seni çok seviyorum balımmm 🤍</strong><br>İyi ki varsın…</p>
+  </div>
+
+  <!-- BİZ -->
+  <div class="card delay">
+    <h2>💌 Biz</h2>
+    <img src="eysan1.JPEG" class="photo" alt="">
+    <p>Seninle geçen her an benim için çok değerli balımmm…</p>
+  </div>
+
+  <!-- GALERİ -->
+  <div class="card delay">
+    <h2>📸 Anılar</h2>
+    <div class="grid">
+      <img src="eysan2.JPEG" class="photo" alt="">
+      <img src="eysan3.JPEG" class="photo" alt="">
+      <img src="eysan4.JPEG" class="photo" alt="">
+      <img src="eysan5.JPEG" class="photo" alt="">
+    </div>
+    <p>Gülüşün bile her şeye yetiyor 💕</p>
+  </div>
+
+  <!-- DEVAM -->
+  <div class="card delay">
+    <img src="eysan6.JPEG" class="photo" alt="">
+    <p>Geleceğimde hep sen varsın…</p>
+  </div>
+
+  <!-- SÜRPRİZ -->
+  <div class="footer">
+    <p>❤️ Seni seviyorum balımmm ❤️</p>
+    <span class="badge">Bu sayfa sadece sana</span>
+  </div>
+
+</div>
+
+<!-- Kalpler -->
+<script>
+const hearts = ["💖","💗","💘","💝","💕"];
+for(let i=0;i<14;i++){
+  const h=document.createElement("div");
+  h.className="heart-float";
+  h.innerText=hearts[Math.floor(Math.random()*hearts.length)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDelay=(Math.random()*6)+"s";
+  h.style.fontSize=(14+Math.random()*18)+"px";
+  document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
+
